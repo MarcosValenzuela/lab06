@@ -13,6 +13,7 @@ as an example " Plum Cherries Orange"
 """
 
 """
+import random
 num = generate random number
 
 if num is greater than 15,
@@ -35,24 +36,26 @@ loop three times
 import random
 
 def main():
-    for i in range(3):
-        outcome = spinWheel()
-        print(outcome, end=" ")
+    for i in range(0, 3):
+        spin()
 
-def spinWheel():
-    n = random.randint(1, 20)
-    if n > 15:
-        return "Cherries"
-    elif n > 10:
-        return "Orange"
-    elif n > 5:
-        return "Plum"
-    elif n > 2:
-        return "Melon"
-    elif n > 1:
-        return "Bell"
+def spin():
+    rand_num = random.randint(1, 20)
+    output = ""
+    if rand_num > 15:
+        output = "Cherries"
+    elif rand_num > 10:
+        output = "Orange"
+    elif rand_num > 5:
+        output = "Plum"
+    elif rand_num > 2:
+        output = "Melon"
+    elif rand_num > 1:
+        output = "Bell"
     else:
-        return "Bar"
+        output = "Bar"
+
+    print(output, end=" ")
 
 main()
 
